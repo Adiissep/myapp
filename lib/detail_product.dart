@@ -9,7 +9,12 @@ class DetailProduct extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(243, 74, 125, 244),
+      backgroundColor: const Color.fromARGB(186, 37, 49, 77),
+      bottomNavigationBar: Container(
+          color: Colors.white,
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          child: ElevatedButton(
+              onPressed: () {}, child: const Text('Add to Cart'))),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -34,7 +39,7 @@ class DetailProduct extends StatelessWidget {
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30)),
                 ),
-                child: Column(
+                child: ListView(
                   children: [
                     const SizedBox(height: 30),
                     Container(
@@ -44,9 +49,11 @@ class DetailProduct extends StatelessWidget {
                         children: [
                           Container(
                             padding: const EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 5),
+                                vertical: 10, horizontal: 10),
                             decoration: BoxDecoration(
-                                color: Colors.pinkAccent.withOpacity(0.5)),
+                              color: Colors.pinkAccent.withOpacity(0.5),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
                             child: const Center(
                               child: Text(
                                 'Popular',
@@ -70,7 +77,82 @@ class DetailProduct extends StatelessWidget {
                           )
                         ],
                       ),
-                    )
+                    ), //End Header
+
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Pizza Love',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 5, vertical: 5),
+                                child: const Row(
+                                  children: [
+                                    Icon(
+                                      Icons.star_half,
+                                      color: Colors.orange,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      "4.8 Ratings",
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 18, vertical: 5),
+                                child: const Row(
+                                  children: [
+                                    Icon(
+                                      Icons.shopify,
+                                      color: Colors.purple,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text("Order")
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          const Text(
+                              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using , making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).'),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          // ElevatedButton(
+                          //   onPressed: () {},
+                          //   style: ElevatedButton.styleFrom(
+                          //     backgroundColor: Colors.red,
+                          //     minimumSize: Size(screenWidth, 50),
+                          //   ),
+                          //   child: const Text(
+                          //     'Add To Cart',
+                          //     style: TextStyle(color: Colors.white),
+                          //   ),
+                          // ),
+                        ],
+                      ),
+                    ), //End
                   ],
                 ),
               ),
